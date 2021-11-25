@@ -11,6 +11,5 @@ class ProfilesController extends Controller
 {
     public function index() {
         return response()->file(storage_path('app/public/landscapes.json'));
-        // decode?
     }
 }
