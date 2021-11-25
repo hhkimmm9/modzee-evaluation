@@ -1,5 +1,7 @@
 <template>
-    <div id="content"></div>
+    <div id="Home">
+        <h1>Welcome to RateMyPhotos</h1>
+    </div>
 </template>
 
 <script>
@@ -8,4 +10,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#Home {
+    /* display: flex; */
+}
+
+#profileSection {
+}
+
+#albumSection {
+}
+</style>
