@@ -30,13 +30,11 @@
             </div>
         </div>
         <div id="albumSection">
-            <div
-                id="albumCard"
+            <AlbumCard
                 v-for="album in getProfile.album"
+                :album="album"
                 :key="album.id"
-            >
-                <AlbumCard :album="album" />
-            </div>
+            />
         </div>
     </div>
 </template>
@@ -136,6 +134,5 @@ img {
 
 #albumSection {
     width: 80vw;
-    margin-right: 0;
 }
 </style>
