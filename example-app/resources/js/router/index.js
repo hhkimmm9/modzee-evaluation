@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Home from "../views/Home.vue";
+import ProfileIndex from "../views/ProfileIndex.vue";
 import ProfileShow from "../views/ProfileShow.vue";
 
 Vue.use(VueRouter);
@@ -14,6 +15,11 @@ const routes = [
     },
     {
         path: "/profile",
+        name: "ProfileIndex",
+        component: ProfileIndex,
+    },
+    {
+        path: "/profile/:id",
         name: "ProfileShow",
         component: ProfileShow,
     },
