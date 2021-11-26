@@ -11,7 +11,7 @@ const getters = {
 const actions = {
     async fetchProfile({ commit }) {
         await axios
-            .get("http://localhost/api/profiles")
+            .get("http://localhost/api/profile")
             .then((res) => {
                 console.log("Successfully loaded data...");
                 commit("setProfile", res.data);

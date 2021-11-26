@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\AlbumsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,14 @@ use App\Http\Controllers\ProfilesController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::get('profiles', [ProfilesController::class, 'index']);
+// Profile REST API
+Route::get('profile', [ProfilesController::class, 'index']);
+Route::get('profile/{id}', [ProfilesController::class, 'show']);
+
+// Album REST API
+Route::get('album', [AlbumsController::class, 'index']);
+Route::get('album/{id}', [AlbumsController::class, 'show']);
