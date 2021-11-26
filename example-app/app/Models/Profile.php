@@ -20,6 +20,6 @@ class Profile extends Model
 
     public function albums()
     {
-        return $this->hasMany(Profile::class);
+        return $this->hasMany(Album::class);
     }
 }
