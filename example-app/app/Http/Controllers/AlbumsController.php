@@ -14,7 +14,7 @@ class AlbumsController extends Controller
      */
     public function index()
     {
-        //
+        return Album::all();
     }
 
     /**
@@ -46,7 +46,7 @@ class AlbumsController extends Controller
      */
     public function show($id)
     {
-        //
+        return Album::find($id);
     }
 
     /**
