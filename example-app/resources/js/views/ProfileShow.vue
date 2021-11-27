@@ -1,5 +1,6 @@
 <template>
     <div id="ProfileShow">
+        <!-- TODO: min-width for profileSection -->
         <div id="profileSection">
             <div id="img">
                 <img
@@ -30,13 +31,11 @@
             </div>
         </div>
         <div id="albumSection">
-            <div
-                id="albumCard"
+            <AlbumCard
                 v-for="album in getProfile.album"
+                :album="album"
                 :key="album.id"
-            >
-                <AlbumCard :album="album" />
-            </div>
+            />
         </div>
     </div>
 </template>
@@ -73,20 +72,21 @@ export default {
     width: 80vw;
     margin: auto;
     display: flex;
+    min-width: 768px;
 }
 
 #img {
-    width: 25%;
+    flex: 1;
     margin: auto;
 }
 
-img {
+#img > img {
     width: 75%;
     border-radius: 50%;
 }
 
 #nameAndPersonalInfo {
-    width: 75%;
+    flex: 3;
     text-align: left;
     padding: 15px;
 }
@@ -97,7 +97,7 @@ img {
 }
 
 #left {
-    width: 65%;
+    flex: 6.5;
     padding-right: 20px;
 }
 
@@ -106,12 +106,12 @@ img {
 }
 
 #bio {
-    margin-top: 0;
+    margin-top: 0.5em;
     color: lightgray;
 }
 
 #right {
-    width: 35%;
+    flex: 3.5;
 }
 
 #phone-title {
@@ -120,22 +120,25 @@ img {
 
 #phone {
     color: hotpink;
-    margin-top: 5px;
+    margin-top: 0.5em;
     margin-bottom: 0;
 }
 
 #email-title {
     margin-bottom: 0;
-    margin-top: 5px;
+    margin-top: 0.5em;
 }
 
+/* TODO: use a class and combine this with phone */
 #email {
     color: hotpink;
-    margin-top: 5px;
+    margin-top: 0.5em;
 }
 
 #albumSection {
-    width: 80vw;
-    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25px;
 }
 </style>

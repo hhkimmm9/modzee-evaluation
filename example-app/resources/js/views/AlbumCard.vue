@@ -13,7 +13,7 @@
             </div>
             <div id="lower">
                 <img
-                    v-if="album.featured"
+                    v-show="album.featured"
                     src="http://localhost/storage/img/160px-Heart_corazón.png"
                     alt="Heart Icon"
                 />
@@ -33,40 +33,75 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #AlbumCard {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
+    width: 80vw;
+    height: auto;
+    margin: 10px;
 }
 
 #imgAndTitle {
     position: relative;
+}
+
+#imgAndTitle > img {
     width: 100%;
-    height: 60%;
 }
 
 #imgAndTitle > p {
     position: absolute;
-    top: 85%;
-    left: 5%;
+    top: 80%;
+    left: 3%;
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 40px;
     margin: 0;
 }
 
 #descAndDate {
     background: white;
-    width: 100%;
-    height: 40%;
+}
+
+#upper {
+    padding: 15px;
+    text-align: justify;
 }
 
 #lower {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #lower > img {
-    width: 20px;
+    width: 1.5em;
+    margin-left: 1em;
+}
+
+#lower > p {
+    color: lightgrey;
+    text-align: right;
+    right: 5px;
+    bottom: 3px;
+    margin: 0;
+    padding: 10px;
+}
+
+@media (min-width: 944px) {
+    #AlbumCard {
+        width: 30vw;
+        height: auto;
+        margin: 10px;
+    }
+
+    #imgAndTitle > p {
+        position: absolute;
+        top: 80%;
+        left: 3%;
+        color: white;
+        font-weight: bold;
+        font-size: 23px;
+        margin: 0;
+    }
 }
 </style>
