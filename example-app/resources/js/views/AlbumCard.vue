@@ -35,9 +35,9 @@ export default {
 
 <style scoped>
 #AlbumCard {
-    display: flex;
-    flex-direction: column;
-    width: 30vw;
+    width: 80vw;
+    height: auto;
+    margin: 10px;
 }
 
 #imgAndTitle {
@@ -54,7 +54,7 @@ export default {
     left: 3%;
     color: white;
     font-weight: bold;
-    font-size: 23px;
+    font-size: 40px;
     margin: 0;
 }
 
@@ -68,14 +68,14 @@ export default {
 }
 
 #lower {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #lower > img {
-    position: absolute;
-    width: 20px;
-    left: 5px;
-    bottom: 3px;
+    width: 1.5em;
+    margin-left: 1em;
 }
 
 #lower > p {
@@ -85,5 +85,23 @@ export default {
     bottom: 3px;
     margin: 0;
     padding: 10px;
+}
+
+@media (min-width: 944px) {
+    #AlbumCard {
+        width: 30vw;
+        height: auto;
+        margin: 10px;
+    }
+
+    #imgAndTitle > p {
+        position: absolute;
+        top: 80%;
+        left: 3%;
+        color: white;
+        font-weight: bold;
+        font-size: 23px;
+        margin: 0;
+    }
 }
 </style>
