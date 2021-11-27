@@ -26,4 +26,3 @@ Route::get('profile/{id}', [ProfilesController::class, 'show']);
 
 // Album REST API
 Route::get('album', [AlbumsController::class, 'index']);
-Route::get('album/{id}', [AlbumsController::class, 'show']);
