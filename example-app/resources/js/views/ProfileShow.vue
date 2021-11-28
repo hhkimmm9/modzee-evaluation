@@ -1,6 +1,6 @@
 <template>
-    <div id="ProfileShow">
-        <!-- TODO: min-width for profileSection -->
+    <div id="ProfileShow" v-show="loading">
+        <router-link to="/profile" id="button">Go Back</router-link>
         <div id="profileSection">
             <div id="img">
                 <img
@@ -32,7 +32,7 @@
         </div>
         <div id="albumSection">
             <AlbumCard
-                v-for="album in getProfile.album"
+                v-for="album in getAlbum"
                 :album="album"
                 :key="album.id"
             />
@@ -52,93 +52,41 @@ export default {
         AlbumCard,
     },
 
-    mounted() {
-        this.fetchProfile();
-
-        this.imgPath = this.getProfile.profile_picture;
+    data() {
+        return {
+            loading: true,
+        };
     },
 
     methods: {
-        ...mapActions(["fetchProfile"]),
+        ...mapActions(["fetchProfileShow", "fetchAlbumIndex"]),
     },
 
-    computed: mapGetters(["getProfile"]),
+    async mounted() {
+        await this.fetchProfileShow(this.$route.params.id);
+        await this.fetchAlbumIndex(this.getProfile.id);
+        this.loading = true;
+    },
+
+    computed: mapGetters(["getProfile", "getAlbum"]),
 };
 </script>
 
 <style scoped>
+#button {
+    margin: 1em;
+    border: 1.5px solid rgb(250, 250, 250);
+    text-decoration: none;
+    color: white;
+    padding: 0.5em;
+    display: inline-block;
+    width: 10%;
+}
+
 #profileSection {
     background: white;
     width: 80vw;
-    margin: auto;
+    margin: 1em auto;
     display: flex;
     min-width: 768px;
 }
-
-#img {
-    flex: 1;
-    margin: auto;
-}
-
-#img > img {
-    width: 75%;
-    border-radius: 50%;
-}
-
-#nameAndPersonalInfo {
-    flex: 3;
-    text-align: left;
-    padding: 15px;
-}
-
-#lower {
-    display: flex;
-    color: darkgrey;
-}
-
-#left {
-    flex: 6.5;
-    padding-right: 20px;
-}
-
-#bio-title {
-    margin-bottom: 0;
-}
-
-#bio {
-    margin-top: 0.5em;
-    color: lightgray;
-}
-
-#right {
-    flex: 3.5;
-}
-
-#phone-title {
-    margin-bottom: 0;
-}
-
-#phone {
-    color: hotpink;
-    margin-top: 0.5em;
-    margin-bottom: 0;
-}
-
-#email-title {
-    margin-bottom: 0;
-    margin-top: 0.5em;
-}
-
-/* TODO: use a class and combine this with phone */
-#email {
-    color: hotpink;
-    margin-top: 0.5em;
-}
-
-#albumSection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 25px;
-}
-</style>
