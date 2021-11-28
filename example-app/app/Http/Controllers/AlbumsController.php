@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Album;
 
 class AlbumsController extends Controller
@@ -12,9 +13,9 @@ class AlbumsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $req)
     {
-        return Album::all();
+        return DB::table('albums')->where('profile_id', $req->query('whose'))->get(); 
     }
 
     /**
@@ -46,7 +47,7 @@ class AlbumsController extends Controller
      */
     public function show($id)
     {
-        return Album::find($id);
+        //
     }
 
     /**
