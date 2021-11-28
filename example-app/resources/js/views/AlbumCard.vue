@@ -15,7 +15,12 @@
                 <img
                     v-show="album.featured"
                     src="http://localhost/storage/img/160px-Heart_corazón.png"
-                    alt="Heart Icon"
+                    alt="Heart Icon Featured True"
+                />
+                <img
+                    v-show="!album.featured"
+                    src="https://www.pngall.com/wp-content/uploads/2016/03/Heart-PNG-HD.png"
+                    alt="Heart Icon Featured False"
                 />
                 <p>{{ album.date }}</p>
             </div>
