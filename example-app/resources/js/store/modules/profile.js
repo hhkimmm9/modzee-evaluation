@@ -11,6 +11,7 @@ const getters = {
 };
 
 const actions = {
+    // Fetch the list of profiles.
     async fetchProfileIndex({ commit }) {
         await axios
             .get("http://localhost/api/profile")
@@ -20,6 +21,7 @@ const actions = {
             .catch((err) => alert(err));
     },
 
+    // Fetch a profile with a given id.
     async fetchProfileShow({ commit }, id) {
         await axios
             .get(`http://localhost/api/profile/${id}`)

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+// Required for Vue Router.
 Route::get('/{vue_capture?}', function() {
     return view('welcome');
 })->where('vue_capture', '[\/\w\.-]*');
