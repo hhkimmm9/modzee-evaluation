@@ -40,9 +40,10 @@ export default {
 
 <style scoped>
 #AlbumCard {
-    width: 80vw;
-    height: auto;
+    width: 80%;
     margin: 10px;
+    min-width: 524px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #imgAndTitle {
@@ -94,9 +95,11 @@ export default {
 
 @media (min-width: 944px) {
     #AlbumCard {
-        width: 30vw;
-        height: auto;
+        width: 30%;
         margin: 10px;
+        min-width: 300px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+            0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     #imgAndTitle > p {
