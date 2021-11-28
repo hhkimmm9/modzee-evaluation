@@ -28,7 +28,7 @@ export default {
 
 <style>
 #app {
-    background-image: url("https://www.xmple.com/wallpaper/brown-blue-linear-gradient-3200x1800-c2-a0522d-87ceeb-a-45-f-14.svg");
+    background-image: url("http://localhost/storage/img/brown-blue-linear-gradient-3200x1800-c2-a0522d-87ceeb-a-45-f-14.svg");
     font-family: sans-serif;
 }
 
@@ -60,6 +60,10 @@ export default {
 #footer {
     text-align: center;
     color: rgb(250, 250, 250);
-    height: 50px;
+    height: 60px;
+}
+
+#footer > p {
+    margin-top: 2em;
 }
 </style>

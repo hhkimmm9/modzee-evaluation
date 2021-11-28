@@ -9,6 +9,7 @@ const getters = {
 };
 
 const actions = {
+    // Fetch album data that linked to a specific user account.
     async fetchAlbumIndex({ commit }, id) {
         await axios
             .get(`http://localhost/api/album?whose=${id}`)

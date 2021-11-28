@@ -90,3 +90,70 @@ export default {
     display: flex;
     min-width: 768px;
 }
+
+#img {
+    flex: 1;
+    margin: auto;
+}
+
+#img > img {
+    width: 75%;
+    border-radius: 50%;
+}
+
+#nameAndPersonalInfo {
+    flex: 3;
+    text-align: left;
+    padding: 15px;
+}
+
+#lower {
+    display: flex;
+    color: darkgrey;
+}
+
+#left {
+    flex: 6.5;
+    padding-right: 20px;
+}
+
+#bio-title {
+    margin-bottom: 0;
+}
+
+#bio {
+    margin-top: 0.5em;
+    color: lightgray;
+}
+
+#right {
+    flex: 3.5;
+}
+
+#phone-title {
+    margin-bottom: 0;
+}
+
+#phone {
+    color: hotpink;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+#email-title {
+    margin-bottom: 0;
+    margin-top: 0.5em;
+}
+
+#email {
+    color: hotpink;
+    margin-top: 0.5em;
+}
+
+#albumSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25px;
+}
+</style>

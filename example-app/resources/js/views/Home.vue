@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 h1 {
     color: rgb(250, 250, 250);
 }
