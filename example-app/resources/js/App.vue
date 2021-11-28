@@ -30,6 +30,7 @@ export default {
 #app {
     background-image: url("http://localhost/storage/img/brown-blue-linear-gradient-3200x1800-c2-a0522d-87ceeb-a-45-f-14.svg");
     font-family: sans-serif;
+    min-width: 375px;
 }
 
 #nav {
