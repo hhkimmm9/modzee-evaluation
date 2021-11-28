@@ -9,21 +9,19 @@
                 />
             </div>
             <div id="nameAndPersonalInfo">
-                <div id="upper">
-                    <h2>{{ getProfile.name }}</h2>
-                </div>
+                <h2>{{ getProfile.name }}</h2>
                 <div id="lower">
                     <div id="left">
-                        <h5 id="bio-title">Bio</h5>
-                        <p id="bio">{{ getProfile.bio }}</p>
+                        <h5 class="bottomZero">Bio</h5>
+                        <p id="bioContent">{{ getProfile.bio }}</p>
                     </div>
                     <div id="right">
-                        <h5 id="phone-title">Phone</h5>
-                        <p id="phone">
+                        <h5 class="bottomZero">Phone</h5>
+                        <p class="bottomZero fontColorPink">
                             {{ getProfile.phone }}
                         </p>
-                        <h5 id="email-title">Email</h5>
-                        <p id="email">
+                        <h5 class="bottomZero">Email</h5>
+                        <p class="bottomZero fontColorPink">
                             {{ getProfile.email }}
                         </p>
                     </div>
@@ -112,42 +110,18 @@ export default {
     color: darkgrey;
 }
 
-#left {
-    flex: 6.5;
-    padding-right: 20px;
-}
-
-#bio-title {
-    margin-bottom: 0;
-}
-
-#bio {
+#bioContent {
     margin-top: 0.5em;
+    margin-right: 0.5em;
     color: lightgray;
 }
 
-#right {
-    flex: 3.5;
+.bottomZero {
+    margin: 0.3em 0;
 }
 
-#phone-title {
-    margin-bottom: 0;
-}
-
-#phone {
+.fontColorPink {
     color: hotpink;
-    margin-top: 0.5em;
-    margin-bottom: 0;
-}
-
-#email-title {
-    margin-bottom: 0;
-    margin-top: 0.5em;
-}
-
-#email {
-    color: hotpink;
-    margin-top: 0.5em;
 }
 
 #albumSection {
@@ -155,5 +129,48 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 25px;
+}
+
+@media (max-width: 800px) {
+    #profileSection {
+        background: white;
+        width: 50%;
+        margin: 1em auto;
+        display: flex;
+        flex-direction: column;
+        min-width: 200px;
+    }
+
+    #img {
+        margin: 15px auto;
+    }
+
+    #img > img {
+        width: 50%;
+        border-radius: 50%;
+    }
+
+    #nameAndPersonalInfo {
+        text-align: center;
+        padding: 1.5em;
+    }
+
+    #lower {
+        display: flex;
+        flex-direction: column;
+        color: darkgrey;
+    }
+
+    #left {
+    }
+
+    #right {
+    }
+
+    #bioContent {
+        margin: 0.5em auto;
+        color: lightgray;
+        text-align: justify;
+    }
 }
 </style>
