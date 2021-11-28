@@ -11,13 +11,7 @@ export default {
 </script>
 
 <style>
-#Home {
-    /* display: flex; */
-}
-
-#profileSection {
-}
-
-#albumSection {
+h1 {
+    color: rgb(250, 250, 250);
 }
 </style>
